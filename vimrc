@@ -7,11 +7,16 @@ set expandtab
 set encoding=utf-8
 set cursorline 
 set backspace=indent,eol,start
-set completeopt-=preview
 "set laststatus=2
 syntax on
 
-let g:syntastic_java_checkers = []
+" vim-airline config
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='powerlineish'
+
+" YouCompleteMe config
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Vundle Package Management
 set nocompatible              " be iMproved, required
@@ -26,13 +31,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'natebosch/vim-lsc'
-Plugin 'natebosch/vim-lsc-dart'
-Plugin 'thosakwe/vim-flutter'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,5 +51,3 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-let g:lsc_auto_map = v:true
